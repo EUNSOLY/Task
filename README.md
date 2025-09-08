@@ -1,69 +1,25 @@
-# React + TypeScript + Vite
+# 개발환경
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```
+1. Front Library
+  - React.js
+2. DB
+  - Json-server를 설치하고
+  - 첨부한 json 파일을  Json-server에 올려 주세요.
+3. UI Framework
+  - TailwindCSS
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# 세부 구현 요건
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+1. 첨부한 Json 파일을  json-server에 올려서 목록을 호출합니다.
+2. 3개의 부서탭을 구성하고 각 부서별 프로젝트 목록을 구현합니다.
+3. 프로젝트 코드 + 프로젝트명을 대상으로 검색 기능을 구현합니다.
+4. 오른쪽 상단에 등록 버튼을 추가하고 각 부서별 프로젝트 등록 기능을 구현합니다.
+5. 등록된 프로젝트에 대해 json-server를 통해 수정, 삭제 기능을 구현합니다.
+6. 프로젝트 탭과 목록은 컴포넌트로 분리해 구성합니다. (메인 - 탭 - 목록)
+7. 첨부한 json 데이터 구조를 변경해야 할 필요가 있는 경우 자유롭게 변경해도 됩니다.다만 데이터는 동일해야 합니다.
+8. 구현에 필요한 hook은 자유롭게 사용하시면 됩니다.
 ```

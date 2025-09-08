@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../../layout/MainLayout';
+import MainPage from '../../page/MainPage';
 
 interface Hooks {
   router: any;
@@ -13,25 +14,7 @@ const useAppRoute = (): Hooks => {
       children: [
         {
           index: true,
-          element: <div>메인</div>,
-        },
-        {
-          path: 'test',
-          element: <div>테스트</div>,
-        },
-      ],
-    },
-    {
-      path: '/abc',
-      element: <MainLayout />,
-      children: [
-        {
-          index: true,
-          element: <div>abc 메인</div>,
-        },
-        {
-          path: 'test',
-          element: <div>abc테스트</div>,
+          element: <MainPage />,
         },
       ],
     },
