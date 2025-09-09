@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../../layout/MainLayout';
-import MainPage from '../../page/MainPage';
+import MainPage from '../../page/main/MainPage';
 
 interface Hooks {
   router: any;
