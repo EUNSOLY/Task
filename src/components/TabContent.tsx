@@ -14,7 +14,7 @@ const TabContent = ({
 }) => {
   return (
     <div className={cn(`overflow-auto bg-white rounded-lg border border-[#DEDEDE]`)}>
-      <table className={cn(`w-full border-collapse bg-white text-sm text-left min-w-[1000px]`)}>
+      <table className={cn(`w-full border-collapse bg-white text-sm text-left min-w-[1000px] `)}>
         <thead
           className={cn(`text-xs uppercase bg-gray-50 border-b-2 border-[#DEDEDE] text-[#767676] sticky top-0 z-10`)}
         >
@@ -49,13 +49,13 @@ const TabContent = ({
           ) : (
             projects.map((project, index) => {
               if (deptCode && deptCode !== project.deptCode) return null;
+
               return (
                 <tr
                   key={project.id}
                   className={cn(
                     `bg-white hover:bg-gray-50 transition-colors duration-150`,
-                    `border-b border-[#DEDEDE]`,
-                    index % 2 === 0 ? 'bg-gray-25' : 'bg-white'
+                    `border-b border-[#DEDEDE] last:border-b-0`
                   )}
                 >
                   <th scope="row" className={cn(`px-6 py-4 font-medium`)}>
