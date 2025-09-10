@@ -51,15 +51,13 @@ const ProjectListPage = () => {
         })}
       </ul>
 
-      <div className={cn(`flex-1 overflow-auto`)}>
-        <TabContent
-          key={`tab-content`}
-          deptCode={hooks.currentTab?.deptCode}
-          projects={hooks.projectDatas}
-          onClickDelete={hooks.onClickDelete}
-          onClickEdit={hooks.onClickEdit}
-        />
-      </div>
+      <TabContent
+        key={`tab-content`}
+        deptCode={hooks.currentTab?.deptCode}
+        projects={hooks.projectDatas}
+        onClickDelete={hooks.onClickDelete}
+        onClickEdit={hooks.onClickEdit}
+      />
     </>
   );
 };

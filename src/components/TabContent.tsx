@@ -12,8 +12,10 @@ const TabContent = ({
   onClickDelete: (id: number) => void;
   onClickEdit: (id: number) => void;
 }) => {
+  const newProjects = projects.filter((project) => deptCode && deptCode === project.deptCode);
+
   return (
-    <div className={cn(`overflow-auto bg-white rounded-lg border border-[#DEDEDE]`)}>
+    <div className={cn(`overflow-auto bg-white rounded-lg border border-[#DEDEDE] flex-1`)}>
       <table className={cn(`w-full border-collapse bg-white text-sm text-left min-w-[1000px] `)}>
         <thead
           className={cn(`text-xs uppercase bg-gray-50 border-b-2 border-[#DEDEDE] text-[#767676] sticky top-0 z-10`)}
@@ -40,22 +42,20 @@ const TabContent = ({
           </tr>
         </thead>
         <tbody>
-          {projects.length === 0 ? (
+          {newProjects.length === 0 ? (
             <tr>
               <td colSpan={6} className={cn(`px-4 py-4 text-gray-700 text-center`)}>
                 데이터가 존재하지 않습니다.
               </td>
             </tr>
           ) : (
-            projects.map((project, index) => {
-              if (deptCode && deptCode !== project.deptCode) return null;
-
+            newProjects.map((project) => {
               return (
                 <tr
                   key={project.id}
                   className={cn(
                     `bg-white hover:bg-gray-50 transition-colors duration-150`,
-                    `border-b border-[#DEDEDE] last:border-b-0`
+                    `border-b border-[#DEDEDE] ${newProjects.length >= 10 ? 'last:border-b-0' : ''}`
                   )}
                 >
                   <th scope="row" className={cn(`px-6 py-4 font-medium`)}>
