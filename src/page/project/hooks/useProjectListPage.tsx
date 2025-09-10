@@ -75,11 +75,7 @@ const useProjectListPage = (): hooks => {
 
   // 콘텐츠 생성 페이지 이동
   const onClickCreate = () => {
-    if (!currentTab) return; // currentTab 없으면 함수 종료
-
-    const projectCodeForDept = deptProjectCode[currentTab.deptName as keyof typeof deptProjectCode];
-    console.log('등록', projectCodeForDept);
-    navi.goCreatePage({ state: { deptCode: currentTab.deptCode, projectCode: projectCodeForDept } });
+    navi.goCreatePage();
   };
 
   // API 호출 연결

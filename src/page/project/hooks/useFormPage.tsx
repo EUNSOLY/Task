@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { getFindData, type ProjectsDataType } from '../../../server/server';
 
 interface hooks {
@@ -17,7 +17,6 @@ interface hooks {
 }
 const useFormPage = (): hooks => {
   const [searchParams] = useSearchParams();
-  const location = useLocation();
 
   const id: string | null = searchParams.get('id') || null; // 생성, 수정 체크값
   const [formData, setFormData] = useState<Partial<ProjectsDataType>>({});
@@ -73,11 +72,6 @@ const useFormPage = (): hooks => {
       loadFormData(id);
     }
   }, [id]);
-
-  useEffect(() => {
-    if (!location.state) return;
-    setFormData({ ...formData, deptCode: location.state.deptCode, projectCode: location.state.projectCode });
-  }, [location.state]);
 
   return {
     id,
