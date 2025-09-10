@@ -53,6 +53,22 @@ export const createData = async <T>(qeury: string, data: Omit<T, 'id'>): Promise
 
   return res;
 };
+
+// 데이터 수정
+export const updateData = async <T>(qeury: string, data: T): Promise<T> => {
+  const url = `http://localhost:4000/${qeury}/${data.id}`;
+
+  const res = await fetch(url, {
+    method: 'PUT',
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    });
+
+  return res;
+};
 // 데이터 삭제
 export const deleteProject = async <T>(id: number): Promise<T> => {
   const url = `http://localhost:4000/projects/${id}`;

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { createData, getFindData, type ProjectsDataType } from '../../../server/server';
+import { createData, getFindData, updateData, type ProjectsDataType } from '../../../server/server';
 import useNavigation from '../../../router/hook/useNavigation';
 
 interface hooks {
@@ -148,19 +148,36 @@ const useFormPage = (): hooks => {
       alert('종료일을 입력해주세요.');
       return;
     }
-
+    let result: ProjectsDataType;
     try {
-      const projectData: Omit<ProjectsDataType, 'id'> = {
-        deptCode: formData.deptCode!,
-        projectCode: formData.projectCode!,
-        projectName: formData.projectName!,
-        year: Number(formData.year!),
-        startDate: formData.startDate!,
-        endDate: formData.endDate!,
-      };
+      if (!id) {
+        // 생성
+        const createProjectData: Omit<ProjectsDataType, 'id'> = {
+          deptCode: formData.deptCode!,
+          projectCode: formData.projectCode!,
+          projectName: formData.projectName!,
+          year: Number(formData.year!),
+          startDate: formData.startDate!,
+          endDate: formData.endDate!,
+        };
+        result = await createData<ProjectsDataType>('projects', createProjectData);
+        alert(`프로젝트 : [${result.projectName}]가 정상적으로 생성 되었습니다.`);
+      } else {
+        // 수정
+        const updateProjectData: ProjectsDataType = {
+          id: formData.id!,
+          deptCode: formData.deptCode!,
+          projectCode: formData.projectCode!,
+          projectName: formData.projectName!,
+          year: Number(formData.year!),
+          startDate: formData.startDate!,
+          endDate: formData.endDate!,
+        };
 
-      const result: ProjectsDataType = await createData<ProjectsDataType>('projects', projectData);
-      alert(`프로젝트 : [${result.projectName}]가 정상적으로 생성되었습니다.`);
+        result = await updateData<ProjectsDataType>('projects', updateProjectData);
+        alert(`프로젝트 : [${result.projectName}]가 정상적으로 수정 되었습니다.`);
+      }
+
       navi.goProjectListPage();
     } catch (err) {
       alert('신규 프로젝트 생성 중 오류가 발생했습니다.');
