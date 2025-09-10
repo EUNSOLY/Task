@@ -31,6 +31,7 @@ interface hooks {
   } | null;
 
   onClickSubmit: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => Promise<void>;
+  onClickPrevPage: () => void;
 }
 const useFormPage = (): hooks => {
   const navi = useNavigation();
@@ -106,18 +107,7 @@ const useFormPage = (): hooks => {
     }));
   };
 
-  // id가 존재 할 때 데이터 로드[수정 시]
-  const loadFormData = async (id: string) => {
-    const data = await getFindData<ProjectsDataType>('projects', id);
-    setFormData(data);
-  };
-
-  useEffect(() => {
-    if (id) {
-      loadFormData(id);
-    }
-  }, [id]);
-
+  // 저장 or 수정 버튼 클릭이벤트
   const onClickSubmit = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     // 필수 값 체크
@@ -185,9 +175,21 @@ const useFormPage = (): hooks => {
     }
   };
 
+  const onClickPrevPage = () => {
+    navi.goProjectListPage();
+  };
+  // id가 존재 할 때 데이터 로드[수정 시]
+  const loadFormData = async (id: string) => {
+    const data = await getFindData<ProjectsDataType>('projects', id);
+    setFormData(data);
+  };
+
+  // 데이터로드
   useEffect(() => {
-    // console.log(formData);
-  }, [formData]);
+    if (id) {
+      loadFormData(id);
+    }
+  }, [id]);
 
   return {
     id,
@@ -199,6 +201,7 @@ const useFormPage = (): hooks => {
     selectStateDept,
 
     onClickSubmit,
+    onClickPrevPage,
   };
 };
 

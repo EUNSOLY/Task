@@ -2,20 +2,23 @@
   "department": [
     {
       "deptName": "플랫폼사업관리부",
-      "deptCode": "1000"
+      "deptCode": "1000",
+      "id": "f57b"
     },
     {
       "deptName": "전략사업본부",
-      "deptCode": "2000"
+      "deptCode": "2000",
+      "id": "460d"
     },
     {
       "deptName": "서비스제작부",
-      "deptCode": "3000"
+      "deptCode": "3000",
+      "id": "7c7f"
     }
   ],
   "projects": [
     {
-      "id": 1179,
+      "id": "1179",
       "year": 2023,
       "projectCode": "XXXX-164",
       "projectName": "스마트 충북실록 아카이브 시스템 구축",
@@ -24,7 +27,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 1163,
+      "id": "1163",
       "year": 2023,
       "projectCode": "XXXX-161",
       "projectName": "한국해양교통안전공단 대구통합전산센터 이전 및 클라우드 전환",
@@ -33,7 +36,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 1161,
+      "id": "1161",
       "year": 2023,
       "projectCode": "XXXX-160",
       "projectName": "국립한국교통대학교 철도HRD센터 홈페이지 구축 용역 계약",
@@ -42,7 +45,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 1149,
+      "id": "1149",
       "year": 2023,
       "projectCode": "XXXX-155",
       "projectName": "서천군 청년홈페이지 구축 용역",
@@ -51,7 +54,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 1104,
+      "id": "1104",
       "year": 2023,
       "projectCode": "XXXX-129",
       "projectName": "대표 홈페이지 재구축 용역 (나노종합기술원)",
@@ -60,7 +63,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 1099,
+      "id": "1099",
       "year": 2023,
       "projectCode": "XXXX-126",
       "projectName": "한국교통대학교 통합홈페이지 고도화 구축 용역",
@@ -69,7 +72,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 1088,
+      "id": "1088",
       "year": 2023,
       "projectCode": "XXXX-119",
       "projectName": "대전 방과후학교 돌봄지원센터 홈페이지 고도화 사업 용역",
@@ -78,7 +81,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 1078,
+      "id": "1078",
       "year": 2023,
       "projectCode": "XXXX-112",
       "projectName": "구정홍보 디지털 아카이브 시스템 구축 용역",
@@ -87,7 +90,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 1033,
+      "id": "1033",
       "year": 2023,
       "projectCode": "XXXX-090",
       "projectName": "과학기술인 경력개발 종합지원 플랫폼 K-클럽 기능 개선 사업",
@@ -96,7 +99,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 1025,
+      "id": "1025",
       "year": 2023,
       "projectCode": "XXXX-084",
       "projectName": "충남대학교병원 다중검사 알고리즘 개발 용역",
@@ -105,7 +108,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 1011,
+      "id": "1011",
       "year": 2023,
       "projectCode": "XXXX-076",
       "projectName": "국립등대박물관 홈페이지 개편 용역",
@@ -114,7 +117,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 996,
+      "id": "996",
       "year": 2023,
       "projectCode": "XXXX-063",
       "projectName": "예산군 통합 누리집 전면 개편 용역",
@@ -123,7 +126,7 @@
       "deptCode": "1000"
     },
     {
-      "id": 991,
+      "id": "991",
       "year": 2023,
       "projectCode": "YYYY-061",
       "projectName": "2023 DGIST 홈페이지 신규 구축 용역",
@@ -132,7 +135,7 @@
       "deptCode": "2000"
     },
     {
-      "id": 985,
+      "id": "985",
       "year": 2023,
       "projectCode": "YYYY-056",
       "projectName": "스마트 해양바이오 플랫폼 기획 및 구축 연구 (컨소시엄)",
@@ -141,7 +144,7 @@
       "deptCode": "2000"
     },
     {
-      "id": 975,
+      "id": "975",
       "year": 2023,
       "projectCode": "YYYY-049",
       "projectName": "유성구 평생학습원 홈페이지 재구축",
@@ -150,7 +153,7 @@
       "deptCode": "2000"
     },
     {
-      "id": 1165,
+      "id": "1165",
       "year": 2023,
       "projectCode": "YYYY-029",
       "projectName": "충남 의료주권 민간단체 출범식 홍보영상 제작",
@@ -159,7 +162,7 @@
       "deptCode": "2000"
     },
     {
-      "id": 1118,
+      "id": "1118",
       "year": 2023,
       "projectCode": "YYYY-028",
       "projectName": "논산시 부서안내판 수리_2차(카드결제건)",
@@ -168,7 +171,7 @@
       "deptCode": "2000"
     },
     {
-      "id": 1110,
+      "id": "1110",
       "year": 2023,
       "projectCode": "YYYY-027",
       "projectName": "계룡시 도서관 디지털 홍보시스템 구축 용역",
@@ -177,7 +180,7 @@
       "deptCode": "2000"
     },
     {
-      "id": 1107,
+      "id": "1107",
       "year": 2023,
       "projectCode": "ZZZ-026",
       "projectName": "금산군 보건소 영상 제작 용역(카드결제건)",
@@ -186,7 +189,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1102,
+      "id": "1102",
       "year": 2023,
       "projectCode": "ZZZ-025",
       "projectName": "청사 디지털 관광 안내판 구매 설치",
@@ -195,7 +198,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1087,
+      "id": "1087",
       "year": 2023,
       "projectCode": "ZZZ-024",
       "projectName": "군청 2층 상황실 모니터링 시스템 구입",
@@ -204,7 +207,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1073,
+      "id": "1073",
       "year": 2023,
       "projectCode": "ZZZ-023",
       "projectName": "논산시의회 빅데이터 통합 플랫폼 대시보드 구매.설치",
@@ -213,7 +216,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1063,
+      "id": "1063",
       "year": 2023,
       "projectCode": "ZZZ-022",
       "projectName": "SKT 실시간 인파모니터링 서비스 용역",
@@ -222,7 +225,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1055,
+      "id": "1055",
       "year": 2023,
       "projectCode": "ZZZ-021",
       "projectName": "빅데이터 분석시스템 업그레이드 및 라이선스 갱신",
@@ -231,7 +234,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1049,
+      "id": "1049",
       "year": 2023,
       "projectCode": "ZZZ-020",
       "projectName": "영동군 홈페이지 부분 개편",
@@ -240,7 +243,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1040,
+      "id": "1040",
       "year": 2023,
       "projectCode": "ZZZ-019",
       "projectName": "온누리 공주 활성화 및 정보화전략(ISP)계획 수립 용역",
@@ -249,7 +252,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1035,
+      "id": "1035",
       "year": 2023,
       "projectCode": "ZZZ-018",
       "projectName": "예산군 통합 누리집 전면 개편사업 상용 SW 구입",
@@ -258,7 +261,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1034,
+      "id": "1034",
       "year": 2023,
       "projectCode": "ZZZ-017",
       "projectName": "계룡시 청사 디지털 홍보시스템 구축 용역",
@@ -267,7 +270,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1032,
+      "id": "1032",
       "year": 2023,
       "projectCode": "ZZZ-016",
       "projectName": "2023 충남문화포털 유지보수 용역",
@@ -276,7 +279,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1017,
+      "id": "1017",
       "year": 2023,
       "projectCode": "ZZZ-015",
       "projectName": "2023년 카드가맹 데이터 구입",
@@ -285,7 +288,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1007,
+      "id": "1007",
       "year": 2023,
       "projectCode": "ZZZ-014",
       "projectName": "조세포털교육 홈페이지 구축",
@@ -294,7 +297,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 1006,
+      "id": "1006",
       "year": 2023,
       "projectCode": "ZZZ-013",
       "projectName": "빅데이터통합플랫폼구축 웹투비(WebtoB) 소프트웨어 도입",
@@ -303,7 +306,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 982,
+      "id": "982",
       "year": 2023,
       "projectCode": "ZZZ-012",
       "projectName": "(계약해지)울산대공원 장미축제 실시간 인파 모니터링 서비스 용역",
@@ -312,7 +315,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 970,
+      "id": "970",
       "year": 2023,
       "projectCode": "ZZZ-011",
       "projectName": "섬진강기차마을 실시간 인파 모니터링 서비스 용역",
@@ -321,7 +324,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 968,
+      "id": "968",
       "year": 2023,
       "projectCode": "ZZZ-010",
       "projectName": "딸기향 농촌테마공원 키오스크 서비스 제작 용역",
@@ -330,7 +333,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 964,
+      "id": "964",
       "year": 2023,
       "projectCode": "ZZZ-009",
       "projectName": "탑정호출렁다리 메타버스 고도화 사업 용역",
@@ -339,7 +342,7 @@
       "deptCode": "3000"
     },
     {
-      "id": 941,
+      "id": "941",
       "year": 2023,
       "projectCode": "ZZZ-008",
       "projectName": "홍주문화회관 누리집 기능고도화 사업",
@@ -348,13 +351,22 @@
       "deptCode": "3000"
     },
     {
-      "id": 812,
+      "id": "812",
       "year": 2023,
       "projectCode": "ZZZ-007",
       "projectName": "어린이백제체험관 홈페이지 구축 용역",
       "startDate": "2023-03-09",
       "endDate": "2023-06-11",
       "deptCode": "3000"
+    },
+    {
+      "id": "aba1",
+      "deptCode": "1000",
+      "projectCode": "XXXX-164",
+      "projectName": "스마트 충북실록 아카이브 시스템 구축",
+      "year": 2023,
+      "startDate": "2023-12-21",
+      "endDate": "2024-09-16"
     }
   ]
 }

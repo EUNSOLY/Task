@@ -9,15 +9,25 @@ const FormPage = () => {
     <form className={cn(`flex flex-col flex-1 gap-2.5`)}>
       <div className={cn('flex items-center justify-between ')}>
         <h3 className={cn('text-lg font-bold')}>프로젝트 {hooks.id ? '수정' : '생성'}</h3>
-        <button
-          type="submit"
-          className={cn(
-            `cursor-pointer min-w-[95px] h-[30px] flex items-center justify-center bg-[#2f68c5] text-white rounded-md font-bold`
-          )}
-          onClick={hooks.onClickSubmit}
-        >
-          저장
-        </button>
+        <div className={cn('flex gap-2 items-center')}>
+          <button
+            className={cn(
+              `cursor-pointer min-w-[95px] h-[30px] flex items-center justify-center  text-[#2f68c5] border border-[#2f68c5] rounded-md font-bold`
+            )}
+            onClick={hooks.onClickPrevPage}
+          >
+            취소
+          </button>
+          <button
+            type="submit"
+            className={cn(
+              `cursor-pointer min-w-[95px] h-[30px] flex items-center justify-center bg-[#2f68c5] text-white rounded-md font-bold`
+            )}
+            onClick={hooks.onClickSubmit}
+          >
+            저장
+          </button>
+        </div>
       </div>
       <div className={cn(`overflow-auto bg-white rounded-lg border border-[#DEDEDE]  px-4 py-4 flex-1`)}>
         <div className={cn('grid grid-cols-2 gap-4 ')}>

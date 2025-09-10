@@ -62,8 +62,6 @@ const useProjectListPage = (): hooks => {
 
   // 콘텐츠 수정 페이지 이동
   const onClickEdit = async (id: number) => {
-    console.log('수정ㄴ');
-    console.log(id, '====> id');
     navi.goEditPage(id);
   };
 
