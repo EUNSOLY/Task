@@ -12,8 +12,22 @@ export interface DepartmentDataType {
   deptName: string;
 }
 
+// 전체 가져오기
 export const getDatas = async <T>(qeury: string): Promise<T[]> => {
   const url = `http://localhost:4000/${qeury}`;
+
+  const res = await fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    });
+
+  return res;
+};
+
+// 특정 데이터 가져오기
+export const getFindData = async <T>(qeury: string, id: string): Promise<T> => {
+  const url = `http://localhost:4000/${qeury}/${id}`;
 
   const res = await fetch(url)
     .then((res) => res.json())
