@@ -1,3 +1,4 @@
+import Select from '../../components/common/Select';
 import type { ProjectsDataType } from '../../server/server';
 import { cn } from '../../util/tailwind-merge';
 import useFormPage from './hooks/useFormPage';
@@ -13,6 +14,7 @@ const FormPage = () => {
           className={cn(
             `cursor-pointer min-w-[95px] h-[30px] flex items-center justify-center bg-[#2f68c5] text-white rounded-md font-bold`
           )}
+          onClick={hooks.onClickSubmit}
         >
           저장
         </button>
@@ -30,37 +32,53 @@ const FormPage = () => {
                   <span>{input.label}</span>
                   {input.isRequired && <span className={cn(`text-[#e74c3c]`)}>*</span>}
                 </label>
-                <input
-                  type={input.type}
-                  id={input.value}
-                  name={input.value}
-                  placeholder={input.placeholder}
-                  className={cn(
-                    'bg-white border  border-[#e9ecef]',
-                    `px-4 py-3 text-sm  rounded-lg `,
-                    'focus:outline-none focus:border-[#2F68C5] '
-                  )}
-                  style={
-                    input.type === 'date'
-                      ? {
-                          colorScheme: 'light',
-                        }
-                      : undefined
-                  }
-                  value={hooks.formData[input.value as keyof ProjectsDataType] ?? ''}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => hooks.onChangeInput(e, input.type, input.value)}
-                  onClick={
-                    input.type === 'date'
-                      ? (e) => {
-                          const input = e.currentTarget as HTMLInputElement;
-                          if (typeof input.showPicker === 'function') {
-                            input.showPicker();
+                {input.value === 'deptCode' ? (
+                  <Select<{ label: string; value: string }>
+                    id={input.value}
+                    menuList={input.optionList ?? []}
+                    selectState={
+                      input.value === 'deptCode' ? hooks.selectStateDept : input.optionList && input.optionList[0]
+                    }
+                    setSelectState={(selected: any) => {
+                      hooks.onChangeSelect(selected, input.value);
+                    }}
+                    defaultValue={input.optionList ? input.optionList[0] : { label: '선택해주세요.', value: '' }}
+                    getLabel={(project) => project.label}
+                    getValue={(project) => project.value}
+                  />
+                ) : (
+                  <input
+                    type={input.type}
+                    id={input.value}
+                    name={input.value}
+                    placeholder={input.placeholder}
+                    className={cn(
+                      'bg-white border  border-[#e9ecef]',
+                      `px-4 py-3 text-sm  rounded-lg `,
+                      'focus:outline-none focus:border-[#2F68C5] '
+                    )}
+                    style={
+                      input.type === 'date'
+                        ? {
+                            colorScheme: 'light',
                           }
-                        }
-                      : undefined
-                  }
-                  disabled={input.value === 'deptCode' || input.value === 'projectCode' ? true : false}
-                />
+                        : undefined
+                    }
+                    maxLength={input.value === 'year' ? 4 : undefined}
+                    value={hooks.formData[input.value as keyof ProjectsDataType] ?? ''}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => hooks.onChangeInput(e, input.value)}
+                    onClick={
+                      input.type === 'date'
+                        ? (e) => {
+                            const input = e.currentTarget as HTMLInputElement;
+                            if (typeof input.showPicker === 'function') {
+                              input.showPicker();
+                            }
+                          }
+                        : undefined
+                    }
+                  />
+                )}
               </div>
             );
           })}

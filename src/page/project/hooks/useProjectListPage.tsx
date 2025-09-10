@@ -24,12 +24,6 @@ const useProjectListPage = (): hooks => {
   const [currentTab, setCurrentTab] = useState<DepartmentDataType | null>(null);
   const [searchValue, setSearchValue] = useState<string>('');
 
-  const deptProjectCode = {
-    플랫폼사업관리부: 'XXXX-164',
-    전략사업본부: 'YYYY-061',
-    서비스제작부: 'ZZZ-026',
-  };
-
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
