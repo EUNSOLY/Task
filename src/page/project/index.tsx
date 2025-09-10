@@ -33,7 +33,7 @@ const ProjectListPage = () => {
             className="cursor-pointer h-[30px] px-2 flex items-center justify-center bg-white text-gray-600 rounded-md border border-[#DEDEDE] text-xs"
             onClick={hooks.onClickCreate}
           >
-            {hooks.currentTab && hooks.currentTab.deptName}신규 프로젝트 등록
+            신규 프로젝트 등록
           </button>
         </div>
       </div>
