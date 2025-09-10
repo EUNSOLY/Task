@@ -1,11 +1,16 @@
 import { useNavigate, type NavigateOptions } from 'react-router-dom';
 
 interface hooks {
+  goProjectListPage: (options?: NavigateOptions | undefined) => void;
   goCreatePage: (options?: NavigateOptions | undefined) => void;
   goEditPage: (id: number, options?: NavigateOptions | undefined) => void;
 }
-const useNavigation = () => {
+const useNavigation = (): hooks => {
   const navi = useNavigate();
+
+  const goProjectListPage = (options?: NavigateOptions | undefined) => {
+    navi('/project', options);
+  };
   const goCreatePage = (options?: NavigateOptions | undefined) => {
     navi('/project/create', options);
   };
@@ -14,6 +19,7 @@ const useNavigation = () => {
   };
 
   return {
+    goProjectListPage,
     goCreatePage,
     goEditPage,
   };

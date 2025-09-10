@@ -1,5 +1,5 @@
 export interface ProjectsDataType {
-  id: number;
+  id?: string | undefined;
   deptCode: string;
   projectCode: string;
   projectName: string;
@@ -38,6 +38,21 @@ export const getFindData = async <T>(qeury: string, id: string): Promise<T> => {
   return res;
 };
 
+// 데이터 추가
+export const createData = async <T>(qeury: string, data: Omit<T, 'id'>): Promise<T> => {
+  const url = `http://localhost:4000/${qeury}`;
+
+  const res = await fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    });
+
+  return res;
+};
 // 데이터 삭제
 export const deleteProject = async <T>(id: number): Promise<T> => {
   const url = `http://localhost:4000/projects/${id}`;
