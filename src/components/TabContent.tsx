@@ -10,7 +10,7 @@ const TabContent = ({
   deptCode: string | undefined;
   projects: ProjectsDataType[];
   onClickDelete: (id: number) => void;
-  onClickEdit: (id: string) => void;
+  onClickEdit: (id: number) => void;
 }) => {
   return (
     <div className={cn(`overflow-auto bg-white rounded-lg border border-[#DEDEDE]`)}>
@@ -83,7 +83,7 @@ const TabContent = ({
                           'border border-blue-300 text-blue-700 bg-blue-50 hover:bg-blue-100 hover:border-blue-400',
                           'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1'
                         )}
-                        onClick={() => onClickEdit(project.projectCode)}
+                        onClick={() => onClickEdit(project.id)}
                       >
                         수정
                       </button>
