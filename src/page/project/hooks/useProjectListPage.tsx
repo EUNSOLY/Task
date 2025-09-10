@@ -22,9 +22,13 @@ const useProjectListPage = (): hooks => {
   const [projectDatas, setProjectDatas] = useState<ProjectsDataType[]>([]);
   const [searchDatas, setSearchDatas] = useState<ProjectsDataType[]>([]);
   const [currentTab, setCurrentTab] = useState<DepartmentDataType | null>(null);
-  // const [reload, setReload] = useState<boolean>(false);
-
   const [searchValue, setSearchValue] = useState<string>('');
+
+  const deptProjectCode = {
+    플랫폼사업관리부: 'XXXX-164',
+    전략사업본부: 'YYYY-061',
+    서비스제작부: 'ZZZ-026',
+  };
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -71,8 +75,11 @@ const useProjectListPage = (): hooks => {
 
   // 콘텐츠 생성 페이지 이동
   const onClickCreate = () => {
-    console.log('등록');
-    navi.goCreatePage();
+    if (!currentTab) return; // currentTab 없으면 함수 종료
+
+    const projectCodeForDept = deptProjectCode[currentTab.deptName as keyof typeof deptProjectCode];
+    console.log('등록', projectCodeForDept);
+    navi.goCreatePage({ state: { deptCode: currentTab.deptCode, projectCode: projectCodeForDept } });
   };
 
   // API 호출 연결
